@@ -173,6 +173,7 @@ do
   vim.o.confirm = true
 
   require('custom.settings')
+  require('custom.lsp_attach')
 
   -- [[ Basic Keymaps ]]
   --  See `:help vim.keymap.set()`

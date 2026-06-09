@@ -32,7 +32,8 @@ External Requirements:
 - Basic utils: `git`, `make`, `unzip`, C Compiler (`gcc`)
 - [ripgrep](https://github.com/BurntSushi/ripgrep#installation),
   [fd-find](https://github.com/sharkdp/fd#installation)
-- [tree-sitter CLI](https://github.com/tree-sitter/tree-sitter/blob/master/crates/cli/README.md#installation)
+- [tree-sitter CLI](https://github.com/tree-sitter/tree-sitter/blob/master/crates/cli/README.md#installation):
+  - If installed via Rust: `cargo install tree-sitter-cli --force`
 - Clipboard tool (xclip/xsel/win32yank or other depending on the platform)
 - A [Nerd Font](https://www.nerdfonts.com/): optional, provides various icons
   - if you have it set `vim.g.have_nerd_font` in `init.lua` to true
@@ -111,10 +112,7 @@ Start Neovim
 nvim
 ```
 
-That's it! `vim.pack` will install all the plugins from your config. Use
-`:lua vim.pack.update(nil, { offline = true })` to inspect plugin state and
-`:lua vim.pack.update()` to fetch updates (`:write` applies updates, `:quit`
-cancels them).
+That's it! `lazy.nvim` will automatically detect your configuration and start installing your plugins. You can open the plugin manager interface by running `:Lazy`. Use `:Lazy install`, `:Lazy update`, or `:Lazy sync` to manage your plugins.
 
 #### Read The Friendly Documentation
 

@@ -16,7 +16,16 @@ return {
           { '<leader>s', group = '[S]earch', mode = { 'n', 'v' } },
           { '<leader>t', group = '[T]oggle' },
           { '<leader>h', group = 'Git [H]unk', mode = { 'n', 'v' } },
-          { 'gr', group = 'LSP Actions', mode = { 'n' } },
+          { 'g', group = '[G]oto' },
+          { 'gd', group = '[G]oto [D]efinition' },
+          { 'gr', group = '[G]oto [R]eferences' },
+          { 'gI', group = '[G]oto [I]mplementation' },
+          { 'gD', group = '[G]oto [D]eclaration' },
+          { '<leader>D', group = 'Type Definition' },
+          { '<leader>d', group = '[D]ocument' },
+          { '<leader>ds', group = 'Document Symbols' },
+          { '<leader>w', group = '[W]orkspace' },
+          { '<leader>ws', group = 'Workspace Symbols' },
         },
       } end },
     { 'folke/todo-comments.nvim', event = 'VimEnter', dependencies = { 'nvim-lua/plenary.nvim' }, opts = { signs = false } },
@@ -41,6 +50,9 @@ return {
         require('fidget').setup {}
         require('mason').setup {}
         require('mason-tool-installer').setup { ensure_installed = { 'stylua', 'lua_ls' } }
+        vim.lsp.config('pyright', {})
+        vim.lsp.config('lua_ls', {})
+        vim.lsp.enable({'pyright', 'lua_ls'})
       end },
     { 'stevearc/conform.nvim', opts = { formatters_by_ft = {} } },
     -- Autocomplete
